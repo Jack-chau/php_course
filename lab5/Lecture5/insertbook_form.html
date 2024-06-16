@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert new book</title>
+</head>
+<body>
+    <h1>Insert new book form</h1>
+    <form method="post" action="insertbook.php">
+        <p>
+            <label for="isbn">isbn:</label>
+            <input type="text" id="isbn" name="isbn" required>
+        </p>
+        <p>
+            <label for="bookname">bookname:</label>
+            <input type="text" id="bookname" name="bookname" required>
+        </p>
+        <p>
+            <label for="author">author:</label>
+            <input type="text" id="author" name="author" required>
+        </p>
+        <p>
+            <label for="publishDate">publishDate:</label>
+            <input type="date" id="publishDate" name="publishDate" required>
+        </p>
+        <p>
+            <input type="submit" value="insert">
+        </p>
+    </form>
+</body>
+</html>

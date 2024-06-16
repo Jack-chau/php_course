@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Registration Form</title>
+</head>
+<body>
+    <h1>Member Registration Form</h1>
+    <form method="post" action="lab4e_submit.php">
+        <p>
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username"/><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"/><br>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" /><br>
+            
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="M"/>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="F"/>
+            <label for="female">Female</label>
+            <br>
+            
+            <label>Interest:</label>
+            <input type="checkbox" id="sport" name='interest[]' value="Sport"/>
+            <label for="sport">Sport</label>
+            <input type="checkbox" id="food" name='interest[]' value="Food"/>
+            <label for="food">Food</label>
+            <input type="checkbox" id="videogame" name='interest[]' value="Video Game"/>
+            <label for="videogame">Video Game</label>
+            <input type="checkbox" id="other" name='interest[]' value="other"/>
+            <label for="other">other</label>
+            <br>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" /><br>
+        </p>
+        <input type="submit" name="submit"/>
+    </form>
+</body>
+</html>
