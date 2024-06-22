@@ -4,7 +4,7 @@ require_once './inc/db.inc.php';
 ini_set('session.cookie_httponly', 1);
 
 // start the session
-
+session_start( ) ;
 try {
     // Create a new PDO connection
     $pdo = dbconnect();
@@ -19,21 +19,23 @@ try {
         } else {
             try {
                 //Task3-2 select the user data
-                
-                
+                $sql = "SELECT * FROM admin WHERE username = :username " ;
+                $stmt = $pdo->prepare( $sql ) ;
+                $stmt->bindParam( ':username', $username ) ;
+                $stmt->execute( ) ;
                 // Check if user exists
                 if ($stmt->rowCount() == 1) {
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     //var_dump($user);
-
+                    //echo $user['password'] ;
                     //Task3-3.1 use password_verify function to verify the password whether is match
-                    if (__??__) {
+                    if ( password_verify( $password, $user['password'] ) ) {
                         //Task3-3.2 use session_regenerate_id to regenerate session ID
-                       __??__
+                        session_regenerate_id( true ) ;
 
                         //Task3-3.3 Use time function to get the current time and add 15 mins then store it into session
-                        $_SESSION["expiry"] = __??__ ; 
-                        $_SESSION['adminID'] = __??__ ; //Task3-3.3 Store the adminID into the session
+                        $_SESSION["expiry"] = time( ) + 900 ; 
+                        $_SESSION['adminID'] = $user[ 'adminID' ] ; //Task3-3.3 Store the adminID into the session
                         
                         // Redirect user to dbstu.php
                         echo "<script>alert('Login successful\\n Now will redirect you to dbstu page'); window.location.href='dbstu.php';</script>";
@@ -45,7 +47,7 @@ try {
                 } else {
                     // Display an error message if username doesn't exist
                     echo "<script>alert('Incorrect username or password.');window.history.go(-1);</script>";
-                }
+                    }
 
             }catch(PDOException $e) {
                 die($e->getMessage());

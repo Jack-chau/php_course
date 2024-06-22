@@ -5,7 +5,7 @@ require_once "./inc/db.inc.php";
 $pdo = dbconnect();
 
 //Task6-1 Get the admin ID from session
-$adminID = __??__;
+$adminID = $_SESSION[ 'adminID' ] ;
 
 try {
   $sql =  'SELECT email FROM admin ';

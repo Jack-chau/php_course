@@ -1,5 +1,6 @@
 <?php
 require_once "./inc/db.inc.php";
+require_once "./inc/session.inc.php";
 $pdo = dbconnect();
 
 try {
@@ -49,6 +50,7 @@ if( $numFound > 0 ) {
   echo "</table>\n";
 }
 ?>
+<p><a href="frmAdminUpdate.php">Update Admin Data</a></p>
 <p><a href="logout.php">Logout</a></p>
 </body>
 </html>
