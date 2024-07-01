@@ -1,0 +1,141 @@
+{
+    "avgHumidity": "75%",
+    "recordTime": "2021-03-18 16:12:01",
+    "temperature": [
+            {
+                "place": "King's Park",
+                "value": 19,
+                "unit": "C"
+            },
+            {
+                "place": "Hong Kong Observatory",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Wong Chuk Hang",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Ta Kwu Ling",
+                "value": 19,
+                "unit": "C"
+            },
+            {
+                "place": "Lau Fau Shan",
+                "value": 18,
+                "unit": "C"
+            },
+            {
+                "place": "Tai Po",
+                "value": 18,
+                "unit": "C"
+            },
+            {
+                "place": "Sha Tin",
+                "value": 19,
+                "unit": "C"
+            },
+            {
+                "place": "Tuen Mun",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Tseung Kwan O",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Sai Kung",
+                "value": 19,
+                "unit": "C"
+            },
+            {
+                "place": "Cheung Chau",
+                "value": 19,
+                "unit": "C"
+            },
+            {
+                "place": "Chek Lap Kok",
+                "value": 21,
+                "unit": "C"
+            },
+            {
+                "place": "Tsing Yi",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Shek Kong",
+                "value": 17,
+                "unit": "C"
+            },
+            {
+                "place": "Tsuen Wan Ho Koon",
+                "value": 17,
+                "unit": "C"
+            },
+            {
+                "place": "Tsuen Wan Shing Mun Valley",
+                "value": 18,
+                "unit": "C"
+            },
+            {
+                "place": "Hong Kong Park",
+                "value": 19,
+                "unit": "C"
+            },
+            {
+                "place": "Shau Kei Wan",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Kowloon City",
+                "value": 19,
+                "unit": "C"
+            },
+            {
+                "place": "Happy Valley",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Wong Tai Sin",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Stanley",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Kwun Tong",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Sham Shui Po",
+                "value": 20,
+                "unit": "C"
+            },
+            {
+                "place": "Kai Tak Runway Park",
+                "value": 21,
+                "unit": "C"
+            },
+            {
+                "place": "Yuen Long Park",
+                "value": 17,
+                "unit": "C"
+            },
+            {
+                "place": "Tai Mei Tuk",
+                "value": 20,
+                "unit": "C"
+            }
+        ]
+}
