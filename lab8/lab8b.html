@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript AJAX</title>
+</head>
+<body>
+    <div>
+        <input id="requestURL" type="text"/>
+        <input id='Search' type="submit" value="Search" onclick="processCheck()"/>
+        <div id="update"></div>
+    </div>
+    <script>
+        function processCheck( ) {
+            var request = new XMLHttpRequest( ) ;
+            var requestURL = 'https://www.virustotal.com/api/v3/domains/' + document.getElementById( 'requestURL' ).value ;
+            request.open( 'GET', requestURL ) ;
+            request.setRequestHeader( 'x-apikey', 'e4a226e59fc070abcebfeaf14a194ceaa71c6f0f8dc5de4b9f4cebb5434a478b' ) ;
+            request.onload = ( ) => {
+                if( request.status === 200 ) {
+                    console.log( request.responseText ) ;
+                    //document.writeln( request.responseText ) ;
+                    var items = JSON.parse( request.responseText ) ;
+                    console.log( items.data ) ;
+                    var attributes = items.data.attributes ;
+                    var output = '</br>last analysis stats<br/>' ;
+                    output += '<table border="1">' ;
+                    output += '<tr><td>domain name</td><td>' + items.data.id + '</td></tr>' ;
+                    output += '<tr><td>last analysis stats</td><td>Value</td></tr>' ;
+                    output += '<tr><td>harmless</td><td>' + attributes.last_analysis_stats.harmless + '</td></tr>' ;
+                    output += '<tr><td>malicious</td><td>' + attributes.last_analysis_stats.malicious + '</td></tr>' ;
+                    output += '<tr><td>suspicious</td><td>' + attributes.last_analysis_stats.suspicious + '</td></tr>' ;
+                    output += '<tr><td>undertected</td><td>' + attributes.last_analysis_stats.undetected + '</td></tr>' ;
+                    output += '<tr><td>timeout</td><td>' + attributes.last_analysis_stats.timeout + '</td></tr>' ;
+                    output += '</table>' ;
+                    
+                    output += '<br/>' ;
+                    output += '<table border="1">' ;
+                    output += 'last analysis results<br/>' ;
+                    output += '<table border="1">' ;
+                    output += '<tr><td>Engine</td><td>' + attributes.last_analysis_results.Abusix.engine_name + '</td></tr>' ;
+                    output += '<tr><td>Category</td><td>' + attributes.last_analysis_results.Abusix.catagory + '</td></tr>' ;
+                    output += '<tr><td>Result</td><td>' + attributes.last_analysis_results.Abusix.result + '</td></tr>' ;
+                    output += '</table>' ;
+
+                    output += '<br/>' ;
+                    output += '<table border="1">' ;
+                    output += '<tr><td>Engine</td><td>' + attributes.last_analysis_results.ADMINUSLabs.engine_name + '</td></tr>' ;
+                    output += '<tr><td>Category</td><td>' + attributes.last_analysis_results.ADMINUSLabs.catagory + '</td></tr>' ;
+                    output += '<tr><td>Result</td><td>' + attributes.last_analysis_results.ADMINUSLabs.result + '</td></tr>' ;
+                    output += '</table>' ;
+
+                    output += '<br/>' ;
+                    output += '<table border="1">' ;
+                    output += '<tr></tr>' ;
+                    output += '<tr><td>Engine</td><td>' + attributes.last_analysis_results.Bkav.engine_name + '</td></tr>' ;
+                    output += '<tr><td>Category</td><td>' + attributes.last_analysis_results.Bkav.catagory + '</td></tr>' ;
+                    output += '<tr><td>Result</td><td>' + attributes.last_analysis_results.Bkav.result + '</td></tr>' ;
+                    output += '</table>' ;
+
+                    document.getElementById( 'update' ).innerHTML = output ;
+
+                } else {
+                    //Handle the error. The response is in request.statusText
+                    console.log( "The request failed with status code " + request.status ) ;
+                    console.log( "The error is " + request.statusText ) ;
+                }
+            } ;
+            request.onerror = ( ) => {
+                //Handle network errors
+                console.error( "The request couldn't be completed due to a network error." ) ;
+            } ;
+            request.send( ) ;
+        }
+    </script>
+</body>
+</html>
