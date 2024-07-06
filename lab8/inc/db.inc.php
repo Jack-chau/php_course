@@ -1,7 +1,7 @@
 <?php
 $dsn = 'mysql:dbname=lab8;host=localhost;charset=UTF8';
 $dbuser = 'root';
-$dbpwd = '12345678';
+$dbpwd = 'Jack0303';
 
 function dbconnect(){
 	
